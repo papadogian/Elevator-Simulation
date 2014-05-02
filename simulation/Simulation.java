@@ -17,10 +17,11 @@ public class Simulation {
 	public static void main(String[] args) {
 
 		Utilities.checkArgs(args);
+
 		people = new ArrayList<Person>();
 		Utilities.tokenizeInputFile(testfile);	   
-		System.out.println(people.toString());
 
+		
 		return; 
     	}
     

@@ -9,7 +9,11 @@ import java.util.ArrayList;
 
 public class Utilities{
 
+
 	/* class static methods */
+
+	/* Checks the arguments that are being passed from the command line */
+
 	public static void checkArgs(String[] args){
 
 		if(args.length != 3){
@@ -36,6 +40,8 @@ public class Utilities{
 
 		return;
 	}
+
+	/* Tokenizes the file (passed as argument from the command line) and stores it in the structure people (ArrayList<Person>) */
 
 	public static void tokenizeInputFile(String filename){
 
@@ -83,6 +89,38 @@ public class Utilities{
 		catch(IOException e){
 			System.out.println("Exception IOException caught\nSystem exits");
 			System.exit(1);
+		}
+
+		return;
+	}
+
+	/* Simulation 's messages */
+
+	public static void printWaitMsg(String name, int start, int end){
+
+		System.out.println(name + " waiting on " + start + " for floor " + end);
+		return;
+
+	}
+
+	public static void printTakeMsg(String name, int elevator){
+
+		System.out.println(name + " taking elevator " + elevator);
+		return;
+
+	}
+
+	public static void printArriveMsg(String name, int floor){
+
+		System.out.println(name + " arrived at floor " + floor);
+		return;
+
+	}
+
+	public static void printElevatorState(int elevator, int floor, String state){
+
+		if(state.compareTo("arrived at") == 0 || state.compareTo("serviced") == 0){
+			System.out.println("Elevator " + elevator + " " + state + " floor " + floor);
 		}
 
 		return;
