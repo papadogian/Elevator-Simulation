@@ -13,6 +13,7 @@ public class Simulation {
 	public static int floors = 0;
 	public static String testfile = null;
 	public static ArrayList<Person> people = null;
+	public static int maxCapacity = 3;
 
 	public static void main(String[] args) {
 

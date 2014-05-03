@@ -9,6 +9,11 @@ import java.util.ArrayList;
 
 public class Utilities{
 
+	/* class private methods */
+	private static void flush(){
+		System.out.flush();
+		return;
+	}
 
 	/* class static methods */
 
@@ -18,8 +23,11 @@ public class Utilities{
 
 		if(args.length != 3){
          		System.out.println("\nWrong input.");
+			flush();
                 	System.out.println("Make sure that your input has the following format :");
+			flush();
 	                System.out.println("[n : number of elevators] [f : number of floors] [file : text file with people's behavior]\n");
+			flush();
 	                System.exit(1);
 	        }
 	        else{
@@ -29,12 +37,16 @@ public class Utilities{
 			}
 			catch(NumberFormatException e){
 				System.out.println("Exception NumberFormatException caught\nSystem exits");
+				flush();
 				System.exit(1);
 			}
 			Simulation.testfile = args[2];
 	     	        System.out.println("Elevators : " + args[0]);
+			flush();
                 	System.out.println("Floors : " + args[1]);
+			flush();
 	                System.out.println("Testfile name : " + args[2]);
+			flush();
 
         	}
 
@@ -77,6 +89,7 @@ public class Utilities{
 				}
 				catch(NumberFormatException e){
 					System.out.println("Exception NumberFormatException caught\nSystem exits");
+					flush();
 	                                System.exit(1);
 				}
 				Simulation.people.add(person);
@@ -88,6 +101,7 @@ public class Utilities{
 		}
 		catch(IOException e){
 			System.out.println("Exception IOException caught\nSystem exits");
+			flush();
 			System.exit(1);
 		}
 
@@ -99,6 +113,7 @@ public class Utilities{
 	public static void printWaitMsg(String name, int start, int end){
 
 		System.out.println(name + " waiting on " + start + " for floor " + end);
+		flush();
 		return;
 
 	}
@@ -106,6 +121,7 @@ public class Utilities{
 	public static void printTakeMsg(String name, int elevator){
 
 		System.out.println(name + " taking elevator " + elevator);
+		flush();
 		return;
 
 	}
@@ -113,6 +129,7 @@ public class Utilities{
 	public static void printArriveMsg(String name, int floor){
 
 		System.out.println(name + " arrived at floor " + floor);
+		flush();
 		return;
 
 	}
@@ -121,6 +138,7 @@ public class Utilities{
 
 		if(state.compareTo("arrived at") == 0 || state.compareTo("serviced") == 0){
 			System.out.println("Elevator " + elevator + " " + state + " floor " + floor);
+			flush();
 		}
 
 		return;
