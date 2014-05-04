@@ -1,6 +1,9 @@
 package simulation;
 
 import java.util.ArrayList;
+import java.io.PrintStream;
+import java.io.FileOutputStream;
+import java.io.FileNotFoundException;
 
 /**
  *
@@ -16,13 +19,20 @@ public class Simulation {
 	public static int maxCapacity = 3;
 
 	public static void main(String[] args) {
+		
+		ElevatorThread e = null;
+		Integer i = 0;
 
 		Utilities.checkArgs(args);
 
 		people = new ArrayList<Person>();
 		Utilities.tokenizeInputFile(testfile);	   
 
-		
+		for(i = 0 ; i < elevators ; i++){
+			e= new ElevatorThread(i.toString(), 3);
+			e.start();		
+		}
+
 		return; 
     	}
     

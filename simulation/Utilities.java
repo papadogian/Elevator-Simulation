@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Utilities{
 
 	/* class private methods */
-	private static void flush(){
+	public static void flush(){
 		System.out.flush();
 		return;
 	}
