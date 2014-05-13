@@ -29,7 +29,7 @@ public class Simulation {
 		Utilities.tokenizeInputFile(testfile);	   
 
 		for(i = 0 ; i < elevators ; i++){
-			e= new ElevatorThread(i.toString(), 3);
+			e= new ElevatorThread(i, 3);
 			e.start();		
 		}
 
