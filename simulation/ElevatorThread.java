@@ -8,6 +8,7 @@ public class ElevatorThread extends Thread{
 	private int elevator = 0;
 	private int timeout = 0;
 	private int startfloor = 0;
+	private int capacity = 3;
 	private ArrayList<Person> peoplein;	
 
 	public ElevatorThread(int e, int timeout){
